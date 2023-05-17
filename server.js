@@ -4,17 +4,19 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
-})
+app.use(express.static(__dirname + '/public'))
 
-app.get('/styles', (req, res) => {
-    res.sendFile(__dirname + '/public/styles.css')
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/public/index.html')
+// })
 
-app.get('/js', (req, res) => {
-    res.sendFile(__dirname + '/public/main.js')
-})
+// app.get('/styles', (req, res) => {
+//     res.sendFile(__dirname + '/public/styles.css')
+// })
+
+// app.get('/js', (req, res) => {
+//     res.sendFile(__dirname + '/public/main.js')
+// })
 
 app.listen(4000, () => {
     console.log('up on 4000')
